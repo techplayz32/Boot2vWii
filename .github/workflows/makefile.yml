@@ -29,9 +29,6 @@ jobs:
     - name: Install wiiu-dev with wut and wut-tools
       run: sudo dkp-pacman -S --needed --noconfirm wiiu-dev
 
-    - name: configure
-      run: ./configure
-
     - name: Install dependencies
       run: make
 

@@ -30,7 +30,7 @@ jobs:
       run: sudo dkp-pacman -S --needed --noconfirm wiiu-dev
 
     - name: Install dependencies
-      run: export DEVKITPRO=/opt/devkitpro && export DEVKITPPC=/opt/devkitpro/devkitppc && make
+      run: export DEVKITPRO=/opt/devkitPro && export DEVKITPPC=/opt/devkitPro/devkitPPC && make
 
     - name: Run check
       run: make check

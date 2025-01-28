@@ -27,7 +27,7 @@ jobs:
       run: sudo dkp-pacman -Sy
 
     - name: Install wiiu-dev with wut and wut-tools
-      run: sudo dkp-pacman -S --needed wiiu-dev
+      run: echo "all" | sudo dkp-pacman -S --needed wiiu-dev
 
     - name: configure
       run: ./configure

@@ -21,7 +21,9 @@ jobs:
       run: chmod +x ./install-devkitpro-pacman
 
     - name: Install devkitPPC-pacman
-      run: echo "all" | sudo ./install-devkitpro-pacman
+      run: | 
+       echo "all" | sudo ./install-devkitpro-pacman
+       export DEVKITPRO=/opt/devkitpro
 
     - name: Resync databases
       run: sudo dkp-pacman -Sy

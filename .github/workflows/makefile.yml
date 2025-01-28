@@ -21,13 +21,13 @@ jobs:
       run: chmod +x ./install-devkitpro-pacman
 
     - name: Install devkitPPC-pacman
-      run: ./install-devkitpro-pacman
+      run: sudo ./install-devkitpro-pacman
 
     - name: Resync databases
-      run: dkp-pacman -Sy
+      run: sudo dkp-pacman -Sy
 
     - name: Install wiiu-dev with wut and wut-tools
-      run: dkp-pacman -S --needed wiiu-dev
+      run: sudo dkp-pacman -S --needed wiiu-dev
 
     - name: configure
       run: ./configure

@@ -1,0 +1,42 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Download devkitPPC pacman installation script
+      run: wget https://apt.devkitpro.org/install-devkitpro-pacman &&
+
+    - name: chmod
+      run: chmod +x ./install-devkitpro-pacman
+
+    - name: Install devkitPPC-pacman
+      run: ./install-devkitpro-pacman
+
+    - name: Resync databases
+      run: dkp-pacman -Sy
+
+    - name: Install wiiu-dev with wut and wut-tools
+      run: dkp-pacman -S --needed wiiu-dev
+
+    - name: configure
+      run: ./configure
+
+    - name: Install dependencies
+      run: make
+
+    - name: Run check
+      run: make check
+
+    - name: Run distcheck
+      run: make distcheck

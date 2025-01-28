@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Download devkitPPC pacman installation script
-      run: wget https://apt.devkitpro.org/install-devkitpro-pacman &&
+      run: wget https://apt.devkitpro.org/install-devkitpro-pacman
 
     - name: chmod
       run: chmod +x ./install-devkitpro-pacman
